@@ -1,7 +1,16 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     alias(libs.plugins.android.application) apply false
-
-    id("com.google.devtools.ksp") version "2.0.20-1.0.26" apply false
+    id("org.jetbrains.kotlin.plugin.parcelize") version "2.3.0" apply false
     id("androidx.navigation.safeargs.kotlin") version "2.10.0" apply false
+    id("com.google.devtools.ksp") version "2.3.6" apply false
+}
+
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.10.0")
+    }
 }
