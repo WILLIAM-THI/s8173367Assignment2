@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">s8173367Assignment2</string>
+
+    <!-- Login Screen Accessibility Strings -->
+    <string name="hint_username">Student ID Username</string>
+    <string name="hint_password">First Name Password</string>
+    <string name="btn_login">Login</string>
 </resources>

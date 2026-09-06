@@ -34,6 +34,10 @@
         android:label="Details"
         tools:layout="@layout/fragment_details">
 
+        <argument
+            android:name="entity"
+            app:argType="com.example.s8173367assignment2.data.Entity" />
+
     </fragment>
 
 </navigation>

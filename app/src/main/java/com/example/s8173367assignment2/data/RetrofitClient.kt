@@ -8,7 +8,7 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://nit3213apinew.onrender.com"
+    private const val BASE_URL = "https://nit3213apinew.onrender.com/"
 
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
