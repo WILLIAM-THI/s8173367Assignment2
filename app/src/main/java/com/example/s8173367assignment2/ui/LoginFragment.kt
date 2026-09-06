@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
-    // Manual inversion as taught structurally in slide models
     private val viewModel = MainViewModel(AppRepository(RetrofitClient.apiService))
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

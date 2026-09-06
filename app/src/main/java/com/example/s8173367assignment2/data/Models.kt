@@ -29,20 +29,20 @@ data class DashboardResponse(
 @JsonClass(generateAdapter = true)
 @Parcelize
 data class Entity(
-    // We check for any possible key the server might be using for the movie name/title
+    // Check field for correct entity property1
     @Json(name = "title") val titleField: String? = null,
     @Json(name = "name") val nameField: String? = null,
 
-    // We check for any possible key the server might use for the secondary detail
+    // Check field for correct entity property2
     @Json(name = "year") val yearField: String? = null,
     @Json(name = "genre") val genreField: String? = null,
     @Json(name = "director") val directorField: String? = null,
 
-    // Description remains mandatory as requested by your prompt assignment sheet
+    // Description
     @Json(name = "description") val description: String
 ) : Parcelable {
 
-    // Cleans up the fields so your EntityAdapter layout views read them perfectly
+    // Cleans up the fields
     val property1: String
         get() = titleField ?: nameField ?: "Movie Title"
 

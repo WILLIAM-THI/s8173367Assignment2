@@ -9,7 +9,7 @@ import com.example.s8173367assignment2.R
 
 class DetailsFragment : Fragment(R.layout.fragment_details) {
 
-    // HERE IS THE ARGUMENT CODE: This delegate handles extracting the safe args bundle from the nav graph
+    // Extract safe args bundle from the nav graph
     private val args: DetailsFragmentArgs by navArgs()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
