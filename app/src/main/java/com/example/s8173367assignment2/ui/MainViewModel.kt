@@ -23,7 +23,14 @@ class MainViewModel(private val repository: AppRepository) : ViewModel() {
                 val response = repository.login(request)
                 _loginState.value = State.Success(response)
             } catch (e: Exception) {
-                _loginState.value = State.Error(e.localizedMessage ?: "Login Failed")
+                val errorMessage = e.localizedMessage ?: ""
+
+                // FIXED: Intercepts the server's 404 response and rewrites it to a proper user message
+                if (errorMessage.contains("400") || errorMessage.contains("404")) {
+                    _loginState.value = State.Error("Incorrect Student ID or Password")
+                } else {
+                    _loginState.value = State.Error(errorMessage.ifEmpty { "Login Failed" })
+                }
             }
         }
     }

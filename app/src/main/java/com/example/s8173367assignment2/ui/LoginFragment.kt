@@ -31,6 +31,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 return@setOnClickListener
             }
 
+            binding.tvErrorMessage.visibility = View.GONE
             viewModel.login(LoginRequest(username, password))
         }
 
@@ -45,7 +46,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     }
                     is State.Error -> {
                         binding.progressBar.visibility = View.GONE
-                        Toast.makeText(requireContext(), state.message, android.widget.Toast.LENGTH_LONG).show()
+                        binding.tvErrorMessage.text = state.message
+                        binding.tvErrorMessage.visibility = View.VISIBLE
                     }
                     else -> binding.progressBar.visibility = View.GONE
                 }
