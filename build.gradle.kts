@@ -4,11 +4,13 @@ plugins {
     id("org.jetbrains.kotlin.plugin.parcelize") version "2.3.0" apply false
     id("androidx.navigation.safeargs.kotlin") version "2.10.0" apply false
     id("com.google.devtools.ksp") version "2.3.6" apply false
+    id("com.google.dagger.hilt.android") version "2.60.1" apply false
 }
 
 buildscript {
     repositories {
         google()
+        mavenCentral()
     }
     dependencies {
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.10.0")

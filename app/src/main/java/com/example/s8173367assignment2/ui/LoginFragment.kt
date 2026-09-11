@@ -4,19 +4,20 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.s8173367assignment2.R
-import com.example.s8173367assignment2.data.AppRepository
 import com.example.s8173367assignment2.data.LoginRequest
-import com.example.s8173367assignment2.data.RetrofitClient
 import com.example.s8173367assignment2.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
-    private val viewModel = MainViewModel(AppRepository(RetrofitClient.apiService))
+    private val viewModel: MainViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

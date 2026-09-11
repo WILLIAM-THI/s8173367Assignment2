@@ -2,13 +2,17 @@ package com.example.s8173367assignment2.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-// Import your own custom data package models we created in Phase 2
 import com.example.s8173367assignment2.data.*
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MainViewModel(private val repository: AppRepository) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val repository: AppRepository
+) : ViewModel() {
 
     private val _loginState = MutableStateFlow<State<LoginResponse>>(State.Initial)
     val loginState: StateFlow<State<LoginResponse>> = _loginState

@@ -4,20 +4,21 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.s8173367assignment2.R
-import com.example.s8173367assignment2.data.AppRepository
-import com.example.s8173367assignment2.data.RetrofitClient
 import com.example.s8173367assignment2.databinding.FragmentDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class DashboardFragment : Fragment(R.layout.fragment_dashboard) {
 
     private lateinit var binding: FragmentDashboardBinding
     private val args: DashboardFragmentArgs by navArgs()
-    private val viewModel = MainViewModel(AppRepository(RetrofitClient.apiService))
+    private val viewModel: MainViewModel by viewModels()
     private lateinit var adapter: EntityAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
