@@ -4,12 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Header -->
+    <TextView
+        android:id="@+id/tvDashboardHeader"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="?attr/colorPrimary"
+        android:text="MOVIES"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        android:letterSpacing="0.15"
+        android:gravity="center"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Recycle View -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical" />
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/tvDashboardHeader"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
