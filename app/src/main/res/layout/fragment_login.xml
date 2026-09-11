@@ -3,7 +3,51 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="0dp">
+
+    <!-- Background -->
+    <ImageView
+        android:id="@+id/ivTopBackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/background02"
+        android:scaleType="fitStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guidelineCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <!-- Heading -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="0.15"
+        android:shadowColor="#80000000"
+        android:shadowDx="3"
+        android:shadowDy="4"
+        android:shadowRadius="15"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@id/ivTopBackground"
+        app:layout_constraintEnd_toEndOf="@id/ivTopBackground"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/ivTopBackground"
+        app:layout_constraintTop_toTopOf="@id/ivTopBackground"
+        app:layout_constraintVertical_bias="0.234" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
     <LinearLayout
         android:id="@+id/loginFormContainer"
@@ -14,7 +58,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingHorizontal="12dp">
+        android:paddingHorizontal="12dp"
+        app:layout_constraintVertical_bias="0.5">
 
         <!-- Username Input Field -->
         <com.google.android.material.textfield.TextInputLayout

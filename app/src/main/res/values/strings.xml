@@ -5,4 +5,5 @@
     <string name="hint_username">Username: Student ID</string>
     <string name="hint_password">Password: First Name</string>
     <string name="btn_login">LOGIN</string>
+    <string name="title">CINELIST</string>
 </resources>
