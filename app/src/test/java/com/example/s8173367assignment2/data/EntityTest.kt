@@ -23,6 +23,7 @@ class EntityTest {
         assertEquals("Movie Title", entity.property1)
     }
 
+    // Test property2 fallback
     @Test
     fun `property2 falls back through genre then director then default`() {
         assertEquals("Sci-Fi", Entity(genreField = "Sci-Fi", description = "desc").property2)

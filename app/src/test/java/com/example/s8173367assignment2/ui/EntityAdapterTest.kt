@@ -15,9 +15,6 @@ class EntityAdapterTest {
 
     @Before
     fun setup() {
-        // Wrap the real adapter in a spy so we can silence notifyDataSetChanged(),
-        // which needs a real Android environment to run safely. Everything else
-        // on the adapter (updateData's dataset logic, getItemCount) still runs for real.
         adapter = spyk(EntityAdapter(onItemClick = {}))
         every { adapter.notifyDataSetChanged() } just Runs
     }

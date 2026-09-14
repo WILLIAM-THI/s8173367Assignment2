@@ -20,6 +20,7 @@ class AppRepositoryImplTest {
         repository = AppRepositoryImpl(apiService, testDispatcher)
     }
 
+    // Test data integrity
     @Test
     fun `login delegates to apiService and returns its result`() = runTest(testDispatcher) {
         val request = LoginRequest("student", "password")
@@ -31,6 +32,7 @@ class AppRepositoryImplTest {
         assertEquals(expectedResponse, result)
     }
 
+    // Verify data fetching logic
     @Test
     fun `getDashboardData delegates to apiService with correct keypass`() = runTest(testDispatcher) {
         val expectedResponse = DashboardResponse(
